@@ -7,15 +7,26 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <Button
-        android:text="List"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal" >
+    <Button
+        android:text="@string/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/btnList"
         android:onClick="list"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:text="@string/back"
+            android:onClick="back" />
+
+    </LinearLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView

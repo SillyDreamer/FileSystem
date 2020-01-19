@@ -1,4 +1,3 @@
 package com.example.filesystem
 
-class Files {
-}
+class Files(var name : String, var flag : Int)
