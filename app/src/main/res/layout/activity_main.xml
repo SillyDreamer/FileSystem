@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    style="@style/AppTheme"
+    android:id="@+id/main_layout">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -16,7 +17,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnList"
-        android:onClick="list"/>
+        android:onClick="list"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 
         <Button
@@ -24,7 +27,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/back"
             android:text="@string/back"
-            android:onClick="back" />
+            android:onClick="back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/but_pref"
+            android:text="@string/pref"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
     </LinearLayout>
 

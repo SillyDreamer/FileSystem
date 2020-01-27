@@ -3,4 +3,17 @@
     <string name="back">back</string>
     <string name="list">List</string>
     <string name="permission">Until you grant the permission, I cannot list the files</string>
+    <string name="pref_theme_key">Theme key</string>
+    <string name="pref_theme_title">choose theme</string>
+    <string name="pref_theme_summary">choose dark theme or light</string>
+    <string name="pref_path_key">path_key</string>
+    <string name="pref_path_title">path</string>
+    <string name="pref_path_summary">show the full path of the file or only the name</string>
+    <string name="pref_text_size_key">text_size_key</string>
+    <string name="pref_text_size_title">text size</string>
+    <string name="pref_text_size_summary">Enter text size</string>
+    <string name="pref">pref</string>
+    <string name="pref_category_path">File name</string>
+    <string name="pref_category_theme">Theme</string>
+    <string name="pref_category_text_size">Text size</string>
 </resources>
