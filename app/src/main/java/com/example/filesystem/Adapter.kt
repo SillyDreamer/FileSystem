@@ -11,7 +11,7 @@ import java.io.File
 
 class Adapter(private var list : ArrayList<Files>, val listener: (Int) -> Unit) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
-    private var textSize : Int = 20
+    private var textSize : Int = 0
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
@@ -27,7 +27,7 @@ class Adapter(private var list : ArrayList<Files>, val listener: (Int) -> Unit) 
 
     fun setTextSize(textSize: Int) {
         this.textSize = textSize
-        notifyDataSetChanged();
+        this.notifyDataSetChanged()
     }
 
 
@@ -37,7 +37,8 @@ class Adapter(private var list : ArrayList<Files>, val listener: (Int) -> Unit) 
         fun bind(pos: Int, listener: (Int) -> Unit) = with(itemView) {
             var name : TextView = itemView.findViewById(android.R.id.text1)
             name.text = list[pos].name
-            name.textSize = textSize.toFloat()
+            if (textSize != 0)
+                name.textSize = textSize.toFloat()
             name.setTextColor(if (list[pos].flag == 1) Color.BLUE else Color.RED)
             name.setOnClickListener {
                 listener(pos)

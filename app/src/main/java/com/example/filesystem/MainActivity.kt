@@ -141,10 +141,12 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+
         val size = preferences.getString(getString(R.string.pref_text_size_key), "18" )
         if (size != null) {
-                adapter!!.setTextSize(size.toString().toInt())
+            adapter!!.setTextSize(size.toString().toInt())
         }
         flag = preferences.getBoolean(getString(R.string.pref_path_key), false)
             val newfile = File(path)
@@ -156,10 +158,12 @@ class MainActivity : AppCompatActivity() {
                         currentArr.add(Files(if(!flag) file.name else file.absolutePath, if (file.isDirectory) 1 else 0))
                     }
                 }
-                recycle.adapter = Adapter(currentArr) {
+                var adapter = Adapter(currentArr) {
                     listener(it)
                 }
-                recycle.adapter!!.notifyDataSetChanged()
+                adapter.setTextSize(size.toString().toInt())
+                recycle.adapter = adapter
+
             }
 
 
@@ -183,6 +187,8 @@ class MainActivity : AppCompatActivity() {
             btnList.setBackgroundColor(Color.argb(100, 140,145,171))
             btnList.setTextColor(Color.BLACK)
         }
+
+
 
     }
 }
